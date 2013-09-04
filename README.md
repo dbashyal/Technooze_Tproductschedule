@@ -9,6 +9,7 @@ Install Magento Product Scheduler
 - clean cache (delete cache folder in var) or (System -> Cache Management -> select all -> refresh -> submit) or (System -> Cache Management -> Flush Magento Cache)
 - logout and log back in to admin
 - Re-index (System -> Index Management -> select all -> reindex Data -> submit)
+- Make sure cron is running for this extension to work properly.
 
 
 Uninstall Magento Product Scheduler
