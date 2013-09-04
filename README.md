@@ -20,11 +20,12 @@ Uninstall Magento Product Scheduler
     - tproduct_activation_date
     - tproduct_expiry_date
 - Run the following query to remove attribute records from eav:
-    ```DELETE FROM `eav_attribute` WHERE `attribute_code` IN ('tproduct_activation_date', 'tproduct_expiry_date');```
-- Delete row from `eav_attribute_group` where `attribute_group_name` = 'Product Schedule'
+```DELETE FROM `eav_attribute` WHERE `attribute_code` IN ('tproduct_activation_date', 'tproduct_expiry_date');```
+- ```Delete from `eav_attribute_group` where `attribute_group_name` = 'Product Schedule'```
 
 
-= Disclaimer
+Disclaimer
+==========
 This extension is based on 'scheduled products' extension by ecomdev.org who dropped support to this module, So I had to modify few bits and pieces to make it compatible for my requirement. i.e. magento community version 1.4.2.0
 
 This might also work with other versions but I haven't tested yet.
