@@ -55,7 +55,7 @@ class Technooze_Tproductschedule_Model_Observer
                 Technooze_Tproductschedule_Model_Attribute_Backend_Datetime::ATTRIBUTE_EXPIRY_DATE,
                 array(
                     'nnull' => 1,
-                    'lteq' => $currentDate
+                    'lt' => $currentDate
                 )
             )
             ->addFieldToFilter(
@@ -92,7 +92,7 @@ class Technooze_Tproductschedule_Model_Observer
                 Technooze_Tproductschedule_Model_Attribute_Backend_Datetime::ATTRIBUTE_EXPIRY_DATE,
                 array(
                     array('null' => 1),
-                    array('gt' => $currentDate)
+                    array('gteq' => $currentDate)
                 )
             )
             ->addFieldToFilter(
