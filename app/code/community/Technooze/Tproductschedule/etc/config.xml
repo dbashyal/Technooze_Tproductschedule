@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Technooze_Tproductschedule>
+            <version>1.0.0</version>
+        </Technooze_Tproductschedule>
+    </modules>
+    <global>
+        <models>
+            <technooze_tproductschedule>
+                <class>Technooze_Tproductschedule_Model</class>
+            </technooze_tproductschedule>
+        </models>
+        <blocks>
+            <technooze_tproductschedule>
+                <class>Technooze_Tproductschedule_Block</class>
+            </technooze_tproductschedule>
+        </blocks>
+        <resources>
+            <technooze_tproductschedule_setup>
+                <setup>
+                    <module>Technooze_Tproductschedule</module>
+                    <class>Technooze_Tproductschedule_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>catalog_setup</use>
+                </connection>
+            </technooze_tproductschedule_setup>
+        </resources>
+    </global>
+    <adminhtml>
+        <events>
+            <adminhtml_catalog_product_edit_prepare_form>
+                <observers>
+                    <technooze_tproductschedule>
+                        <type>singleton</type>
+                        <model>technooze_tproductschedule/observer</model>
+                        <method>productEditDate</method>
+                    </technooze_tproductschedule>
+                </observers>
+            </adminhtml_catalog_product_edit_prepare_form>
+        </events>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <technooze_tproductschedule_process_schedule>
+                <schedule>
+                    <!-- Schedule for every 5 minutes -->
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>technooze_tproductschedule/observer::cronProcessScheduledProducts</model>
+                </run>
+            </technooze_tproductschedule_process_schedule>
+        </jobs>
+    </crontab>
+</config>
