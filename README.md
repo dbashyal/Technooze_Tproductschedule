@@ -24,6 +24,7 @@ Uninstall Magento Product Scheduler
 ```DELETE FROM `eav_attribute` WHERE `attribute_code` IN ('tproduct_activation_date', 'tproduct_expiry_date');```
 - ```Delete from `eav_attribute_group` where `attribute_group_name` = 'Product Schedule'```
 
+For more magento tips, tricks, modules and extensions visit - http://dltr.org/ 's magento section.
 
 Disclaimer
 ==========
