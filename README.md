@@ -29,3 +29,7 @@ Disclaimer
 This extension is based on 'scheduled products' extension by ecomdev.org who dropped support to this module, So I had to modify few bits and pieces to make it compatible for my requirement. i.e. magento community version 1.4.2.0
 
 This might also work with other versions but I haven't tested yet.
+
+Make sure you backup your database before applying this to production. I recommend you test on local, then on staging and if you are happy then only push to production. This extension is provided for free and I might not be able to reply to all issues (if any rises). Also I won't be responsible for any data loss because of this extension. This should only be installed by professional magento developers.
+
+This extension is working fine in my magento install 1.4.2.0
