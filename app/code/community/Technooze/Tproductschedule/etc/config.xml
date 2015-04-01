@@ -45,8 +45,8 @@
         <jobs>
             <technooze_tproductschedule_process_schedule>
                 <schedule>
-                    <!-- Schedule for every 5 minutes -->
-                    <cron_expr>*/5 * * * *</cron_expr>
+                    <!-- Schedule for midnight (daily) -->
+                    <cron_expr>0 0 * * *</cron_expr>
                 </schedule>
                 <run>
                     <model>technooze_tproductschedule/observer::cronProcessScheduledProducts</model>
