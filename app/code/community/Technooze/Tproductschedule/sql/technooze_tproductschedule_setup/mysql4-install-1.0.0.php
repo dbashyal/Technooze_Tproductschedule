@@ -75,6 +75,8 @@ $this->addAttribute(
     )
 );
 
+$this->installEntities();
+
 $this->endSetup();
 
-$this->installEntities();
+
