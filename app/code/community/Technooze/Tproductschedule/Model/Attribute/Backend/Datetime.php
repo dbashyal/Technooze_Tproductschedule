@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Expiry and Activation dates custom backend model
  *
  */
-class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime extends Mage_Eav_Model_Entity_Attribute_Backend_Datetime
+class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime
+    extends Mage_Eav_Model_Entity_Attribute_Backend_Datetime
 {
     /**
      * Activation date attribute code
@@ -31,6 +33,7 @@ class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime extends Mage_E
      * on the save in the admin panel
      *
      * @param Mage_Catalog_Model_Product $object
+     *
      * @return Technooze_Tproductschedule_Model_Attribute_Backend_Datetime
      */
     public function beforeSave($object)
@@ -43,8 +46,9 @@ class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime extends Mage_E
 
         if ($compareResult !== false) {
             // If the date is set
-            if (($compareResult < 0 && $code == self::ATTRIBUTE_ACTIVATION_DATE) ||
-                ($compareResult >= 0 && $code == self::ATTRIBUTE_EXPIRY_DATE)) {
+            if (($compareResult < 0 && $code == self::ATTRIBUTE_ACTIVATION_DATE)
+                || ($compareResult >= 0 && $code == self::ATTRIBUTE_EXPIRY_DATE)
+            ) {
                 // If the date is in the past and it's activation date
                 // or the date is in the future and it's expiry date,
                 // so the product should be deactivated
@@ -63,6 +67,7 @@ class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime extends Mage_E
      * the time part of date so the logic of retrieving is changed
      *
      * @param   string|int $date
+     *
      * @return  string|null
      */
     public function formatDate($date)
@@ -93,6 +98,7 @@ class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime extends Mage_E
      * returns 0 if the dates are equal.
      *
      * @param string $date
+     *
      * @return int
      */
     public function compareDateToCurrent($date)
@@ -111,6 +117,7 @@ class Technooze_Tproductschedule_Model_Attribute_Backend_Datetime extends Mage_E
      * Converts timezone after object load, fixes issue in the core form element
      *
      * @param Mage_Core_Model_Abstract $object
+     *
      * @return Technooze_Tproductschedule_Model_Attribute_Backend_Datetime
      */
     public function afterLoad($object)

@@ -5,7 +5,7 @@
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-                <Mage_Catalog />
+                <Mage_Catalog/>
             </depends>
         </Technooze_Tproductschedule>
     </modules>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Observer for core events handling
  *
@@ -10,6 +11,7 @@ class Technooze_Tproductschedule_Model_Observer
      * and adds custom format for date input
      *
      * @param Varien_Event_Observer $observer
+     *
      * @return void
      */
     public function productEditDate(Varien_Event_Observer $observer)
@@ -55,7 +57,7 @@ class Technooze_Tproductschedule_Model_Observer
                 Technooze_Tproductschedule_Model_Attribute_Backend_Datetime::ATTRIBUTE_EXPIRY_DATE,
                 array(
                     'notnull' => 1,
-                    'lt' => $currentDate
+                    'lt'      => $currentDate
                 )
             )
             ->addFieldToFilter(
@@ -70,9 +72,9 @@ class Technooze_Tproductschedule_Model_Observer
         if ($expiredProductIds) {
             Mage::getSingleton('catalog/product_action')
                 ->updateAttributes(
-                         $expiredProductIds,
-                         array('status' => Mage_Catalog_Model_Product_Status::STATUS_DISABLED),
-                         Mage_Core_Model_App::ADMIN_STORE_ID
+                    $expiredProductIds,
+                    array('status' => Mage_Catalog_Model_Product_Status::STATUS_DISABLED),
+                    Mage_Core_Model_App::ADMIN_STORE_ID
                 );
         }
 
@@ -84,7 +86,7 @@ class Technooze_Tproductschedule_Model_Observer
                 Technooze_Tproductschedule_Model_Attribute_Backend_Datetime::ATTRIBUTE_ACTIVATION_DATE,
                 array(
                     'notnull' => 1,
-                    'lteq' => $currentDate
+                    'lteq'    => $currentDate
                 )
             )
             // Exclude expired products
@@ -107,9 +109,9 @@ class Technooze_Tproductschedule_Model_Observer
         if ($activatedProductIds) {
             Mage::getSingleton('catalog/product_action')
                 ->updateAttributes(
-                         $activatedProductIds,
-                         array('status' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED),
-                         Mage_Core_Model_App::ADMIN_STORE_ID
+                    $activatedProductIds,
+                    array('status' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED),
+                    Mage_Core_Model_App::ADMIN_STORE_ID
                 );
         }
     }
