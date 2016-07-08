@@ -1,0 +1,15 @@
+{
+  "name": "dbashyal/technooze_tproductschedule",
+  "license": "OSL-3.0",
+  "type": "magento-module",
+  "description": "scheduling product activation and deactivation in magento ecommerce http://dltr.org/blog/c/magento",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors":[
+    {
+      "name":"Damodar Bashyal",
+      "email":""
+    }
+  ]
+}
